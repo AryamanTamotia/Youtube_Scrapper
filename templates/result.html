@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Youtube Scrapper</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="table-users">
+      <div class="header">Reviews</div>
+
+      <table cellspacing="0">
+        <tr>
+          <th>Index</th>
+          <th>URL</th>
+          <th>Thumbnail</th>
+          <th>Title</th>
+          <th>Views</th>
+          <th>Time</th>
+        </tr>
+        {% for detail in details %}
+        <tr>
+          <td>{{detail.Index}}</td>
+          <td>{{detail.URL}}</td>
+          <td>{{detail.Thumbnail}}</td>
+          <td>{{detail.Title}}</td>
+          <td>{{detail.Views}}</td>
+          <td>{{detail.Time}}</td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
